@@ -3,6 +3,8 @@ import { ref, onValue, update } from "firebase/database";
 import { db } from "../firebase/firebaseConfig";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { Link } from "react-router-dom";
+
 export default function DeviceManagement() {
   const [devices, setDevices] = useState([]);
   const [freePatients, setFreePatients] = useState([]);
@@ -74,13 +76,19 @@ export default function DeviceManagement() {
   return (
     <div className="container mt-5">
       <h2 className="mb-4 text-center fw-bold">Device Management</h2>
+      <Link
+        className="btn btn-outline-dark btn-sm px-3 py-2 me-2"
+        to="/device-management/device-operations/"
+      >
+        Device Operations
+      </Link>
 
       {devices.length === 0 ? (
         <div className="alert alert-info text-center">
           No devices found in the system.
         </div>
       ) : (
-        <div className="table-responsive">
+        <div className="table-responsive mt-2">
           <table className="table table-hover table-bordered align-middle">
             <thead className="table-dark">
               <tr>

@@ -4,6 +4,8 @@ import { ref, push, set, onValue, update, remove } from "firebase/database";
 import { db } from "../firebase/firebaseConfig";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { Link } from "react-router-dom";
+
 export default function AddDevice() {
   const [form, setForm] = useState({
     model: "ESP32_v1",
@@ -180,7 +182,15 @@ export default function AddDevice() {
 
   return (
     <div className="container mt-4">
-      <h3 className="mb-3">Add New Device</h3>
+      <h3 className="mb-3">
+        <Link
+          className="btn btn-outline-dark btn-sm px-3 py-2 me-4"
+          to="/device-management/"
+        >
+          Back
+        </Link>
+        Add New Device
+      </h3>
 
       {statusMsg.msg && (
         <div className={`alert alert-${statusMsg.type} py-2`} role="alert">

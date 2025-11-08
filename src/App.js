@@ -14,7 +14,6 @@ import {
   DoctorRoute,
 } from "./components/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
-import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -55,7 +54,7 @@ function App() {
             }
           />
           <Route
-            path="/device-operations/"
+            path="device-management/device-operations/"
             element={
               <AdminRoute>
                 <DeviceOperations />
