@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NotAuthorized() {
   return (
@@ -8,14 +9,15 @@ export default function NotAuthorized() {
         <p className="text-muted mb-4">
           You do not have permission to view this page.
         </p>
-
-        <div className="image-wrapper">
-          <img
-            src="/img/access-denied.jpg"
-            alt="Access Denied"
-            className="access-denied-image"
-          />
-        </div>
+        <Link className="btn-sm" to="/">
+          <div className="image-wrapper">
+            <img
+              src="/img/access-denied.jpg"
+              alt="Access Denied"
+              className="access-denied-image"
+            />
+          </div>
+        </Link>
       </div>
 
       <style>{`
