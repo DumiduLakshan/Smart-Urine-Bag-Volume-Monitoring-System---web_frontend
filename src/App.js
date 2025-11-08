@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import DeviceManagement from "./pages/DeviceManagement";
 import UserManagement from "./pages/UserManagement";
 import NotAuthorized from "./pages/NotAuthorized";
+import AddPatient from "./pages/AddPatient";
 
 import {
   PrivateRoute,
@@ -58,6 +59,14 @@ function App() {
               <AdminRoute>
                 <UserManagement />
               </AdminRoute>
+            }
+          />
+          <Route
+            path="/patient-management/"
+            element={
+              <DoctorRoute>
+                <AddPatient />
+              </DoctorRoute>
             }
           />
           <Route path="/not-authorized" element={<NotAuthorized />} />

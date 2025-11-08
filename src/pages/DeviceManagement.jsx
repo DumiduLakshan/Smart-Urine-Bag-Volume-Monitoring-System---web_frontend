@@ -118,19 +118,20 @@ export default function DeviceManagement() {
                     {device.patientId == -1 ? (
                       <button
                         className="btn btn-sm btn-warning m-1"
-                        onClick={() => setSelectedDevice(device.id)}
+                        onClick={() => {
+                          setSelectedDevice(device.id);
+                        }}
                       >
                         Assign
                       </button>
                     ) : (
-                      ""
+                      <button
+                        className="btn btn-sm btn-danger"
+                        onClick={() => handleDeactivate(device.id)}
+                      >
+                        Deactivate
+                      </button>
                     )}
-                    <button
-                      className="btn btn-sm btn-danger"
-                      onClick={() => handleDeactivate(device.id)}
-                    >
-                      Deactivate
-                    </button>
                   </td>
                 </tr>
               ))}
@@ -173,9 +174,10 @@ export default function DeviceManagement() {
 
                             <button
                               className="btn btn-primary btn-sm"
-                              onClick={() =>
-                                handleReassign(p.id, selectedDevice)
-                              }
+                              onClick={() => {
+                                handleReassign(p.id, selectedDevice);
+                                setSelectedDevice(null);
+                              }}
                             >
                               Select
                             </button>

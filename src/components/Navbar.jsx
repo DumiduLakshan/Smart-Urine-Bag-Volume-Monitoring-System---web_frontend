@@ -58,6 +58,15 @@ export default function Navbar() {
               </NavLink>
             </li>
           )}
+
+          {/* Patient Management (Admins & Doctors only) */}
+          {(role === "doctor" || role === "admin") && (
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/patient-management">
+                Patients
+              </NavLink>
+            </li>
+          )}
         </ul>
 
         {/* Right side user info */}
