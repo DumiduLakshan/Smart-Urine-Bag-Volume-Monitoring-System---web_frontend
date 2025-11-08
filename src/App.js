@@ -6,6 +6,7 @@ import DeviceManagement from "./pages/DeviceManagement";
 import UserManagement from "./pages/UserManagement";
 import NotAuthorized from "./pages/NotAuthorized";
 import AddPatient from "./pages/AddPatient";
+import DeviceOperations from "./pages/DeviceOperations";
 
 import {
   PrivateRoute,
@@ -51,6 +52,14 @@ function App() {
               <DoctorRoute>
                 <DeviceManagement />
               </DoctorRoute>
+            }
+          />
+          <Route
+            path="/device-operations/"
+            element={
+              <AdminRoute>
+                <DeviceOperations />
+              </AdminRoute>
             }
           />
           <Route
