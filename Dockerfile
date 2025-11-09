@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm ci --only=production
+RUN npm install
 
 COPY . .
 
@@ -12,6 +12,7 @@ RUN npm run build
 
 RUN npm install -g serve
 
+# Expose port
 EXPOSE 3000
 
 CMD ["serve", "-s", "build", "-l", "3000"]
